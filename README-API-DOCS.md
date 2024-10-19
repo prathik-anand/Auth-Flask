@@ -61,7 +61,7 @@ For UI developers looking to integrate this Authentication API into their applic
 ## API Endpoints
 
 ## Base URL
-`http://localhost:5000/auth`
+`http://localhost:5010/auth`
 
 
 ## Endpoints
@@ -74,7 +74,7 @@ For UI developers looking to integrate this Authentication API into their applic
 - **Description**: Registers a new user.
 
 ```
-curl -X POST http://localhost:5000/auth/register \
+curl -X POST http://localhost:5010/auth/register \
 -H "Content-Type: application/json" \
 -d '{"email": "testuser@example.com", "password": "yourpassword", "first_name": "John", "last_name": "Doe", "phone_no": "1234567890", "location": "New York", "country": "USA"}'
 ```
@@ -116,13 +116,6 @@ curl -X POST http://localhost:5000/auth/register \
     - **Body**:
     ```json
     {
-        "message": "User Name already exists"
-    }
-    ```
-- **Status Code**: `409 Conflict`   
-    - **Body**:
-    ```json
-    {
         "message": "Email already exists"
     }
     ``` 
@@ -134,7 +127,7 @@ curl -X POST http://localhost:5000/auth/register \
 - **Description**: Logs in a user.
 
 ```
-curl -X POST http://localhost:5000/api/auth/login \
+curl -X POST http://localhost:5010/auth/login \
 -H "Content-Type: application/json" \
 -d '{"email": "testuser@example.com", "password": "yourpassword"}'
 ``` 
@@ -182,7 +175,7 @@ curl -X POST http://localhost:5000/api/auth/login \
 - **Description**: Refreshes the access token using the refresh token.
 
 ```
-curl -X POST http://localhost:5000/api/auth/refresh \
+curl -X POST http://localhost:5010/auth/refresh \
 -H "Content-Type: application/json" \
 -d '{"refresh_token": "yourrefreshToken"}'
 ``` 
@@ -216,7 +209,7 @@ curl -X POST http://localhost:5000/api/auth/refresh \
 - **Description**: Logs out a user by invalidating the refresh token.
 
 ```
-curl -X POST http://localhost:5000/api/auth/logout \
+curl -X POST http://localhost:5010/auth/logout \
 -H "Content-Type: application/json" \
 -d '{"refresh_token": "yourrefreshToken"}'
 ``` 
@@ -250,7 +243,7 @@ curl -X POST http://localhost:5000/api/auth/logout \
 - **Description**: Retrieves the user's profile information.
 
 ```
-curl -X GET http://localhost:5000/api/auth/profile \
+curl -X GET http://localhost:5010/auth/profile \
 -H "Authorization: Bearer youraccesstoken"
 ```
 

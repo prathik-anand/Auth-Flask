@@ -46,7 +46,7 @@ dmypy.json
 .pyre/
 
 # Jupyter Notebook
-.ipynb
+*.ipynb
 
 # VS Code settings
 .vscode/
