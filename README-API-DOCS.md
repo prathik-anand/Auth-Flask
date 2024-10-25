@@ -256,8 +256,12 @@ curl -X GET http://localhost:5010/auth/profile \
 - **Body**:
 ```json
 {
-    "username": "newuser",
-    "email": "newuser@example.com"
+    "email": "newuser@example.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "phone_no": "1234567890",
+    "location": "New York",
+    "country": "USA"
 }
 
 #### Failure Responses
