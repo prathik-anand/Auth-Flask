@@ -63,4 +63,12 @@ def logout():
 def profile():
     current_user_id = get_jwt_identity()
     user = AuthService.get_user_profile(current_user_id)
-    return jsonify({'username': user.username, 'email': user.email}), 200
+    return jsonify({
+        'id': user.id,
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'phone_no': user.phone_no,
+        'location': user.location,
+        'country': user.country
+    }), 200
