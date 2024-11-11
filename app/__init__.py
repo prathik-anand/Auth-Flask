@@ -1,10 +1,14 @@
 import os
+import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS 
 from config import Config
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
@@ -29,7 +33,8 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     jwt.init_app(app)
 
-    from app.controller import auth
+    from app.controller import auth, health
     app.register_blueprint(auth.bp)
+    app.register_blueprint(health.bp)
 
     return app
